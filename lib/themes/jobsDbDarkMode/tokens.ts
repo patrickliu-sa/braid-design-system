@@ -10,15 +10,20 @@ export default makeTokens({
   tokenOverrides: {
     color: {
       foreground: {
-        neutral: '#999',
+        neutral: '#bbb',
         neutralInverted: '#666',
-        formAccent: '#4a3598',
+        formAccent: '#396AA2',
+        info: '#5481a9',
+        critical: '#f14c4c',
+        positive: '#7fa851',
+        promote: '#b278b2',
+        secondary: '#ddd',
       },
       background: {
         input: '#121212',
         inputDisabled: '#444',
-        card: '#232323',
-        formAccent: '#4a3598',
+        card: '#333',
+        formAccent: '#396AA2',
       },
     },
   },
