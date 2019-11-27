@@ -58,7 +58,7 @@ const Indicator = ({
     >
       <IconTick
         size="fill"
-        tone={disabled ? 'secondary' : hover ? 'formAccent' : undefined}
+        tone={disabled ? 'secondary' : hover ? 'formAccent' : 'secondary'}
       />
     </Box>
   ) : (
