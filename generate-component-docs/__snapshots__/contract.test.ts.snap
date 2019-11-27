@@ -955,6 +955,11 @@ exports[`Box 1`] = `
   suppressHydrationWarning?: boolean
   tabIndex?: number
   target?: string
+  textAlign?: ResponsiveProp<
+    | "center"
+    | "left"
+    | "right"
+  >
   title?: string
   transform?: "touchable"
   transition?: 
@@ -1384,6 +1389,11 @@ exports[`BoxRenderer 1`] = `
     | "absolute"
     | "fixed"
     | "relative"
+  textAlign?: ResponsiveProp<
+    | "center"
+    | "left"
+    | "right"
+  >
   transform?: "touchable"
   transition?: 
     | "fast"
@@ -1527,7 +1537,9 @@ exports[`Columns 1`] = `
   children: 
     | ReactElement<ColumnProps, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<...>)>
     | ReactElement<ColumnProps, string | ((props: any) => ReactElement<any, string | ... | (new (props: any) => Component<any, any, any>)> | null) | (new (props: any) => Component<...>)>[]
-  collapse?: boolean
+  collapseBelow?: 
+    | "desktop"
+    | "tablet"
   reverse?: boolean
   space: ResponsiveProp<
     | "gutter"
@@ -1624,6 +1636,11 @@ exports[`FieldMessage 1`] = `
 exports[`Heading 1`] = `
 {
   _LEGACY_SPACE_?: boolean
+  align?: ResponsiveProp<
+    | "center"
+    | "left"
+    | "right"
+  >
   children: ReactNode
   component?: 
     | "a"
@@ -1816,10 +1833,14 @@ exports[`Heading 1`] = `
 
 exports[`Hidden 1`] = `
 {
+  above?: 
+    | "mobile"
+    | "tablet"
+  below?: 
+    | "desktop"
+    | "tablet"
   children: ReactNode
-  desktop?: boolean
   inline?: boolean
-  mobile?: boolean
   print?: boolean
   screen?: boolean
 }
@@ -3186,6 +3207,11 @@ exports[`Strong 1`] = `
 exports[`Text 1`] = `
 {
   _LEGACY_SPACE_?: boolean
+  align?: ResponsiveProp<
+    | "center"
+    | "left"
+    | "right"
+  >
   baseline?: boolean
   children?: ReactNode
   component?: 

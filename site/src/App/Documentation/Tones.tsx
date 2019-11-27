@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStyles } from 'sku/treat';
 import { BoxProps } from '../../../../lib/components/Box/Box';
 import {
   Box,
@@ -12,7 +11,6 @@ import {
   Hidden,
 } from '../../../../lib/components';
 import { TextStack } from '../TextStack/TextStack';
-import * as styleRefs from './Tones.treat';
 
 const tones = ['critical', 'positive', 'neutral', 'info', 'promote'] as const;
 type Tone = typeof tones[number];
@@ -135,9 +133,9 @@ const ToneDefinition = ({ tone }: { tone: Tone }) => {
         </Column>
       </Columns>
 
-      <Columns space={['xsmall', 'medium']} collapse>
+      <Columns space={['xsmall', 'medium']} collapseBelow="tablet">
         <Column width="content">
-          <Hidden mobile>
+          <Hidden below="tablet">
             <Box width="touchable" />
           </Hidden>
         </Column>
@@ -147,7 +145,11 @@ const ToneDefinition = ({ tone }: { tone: Tone }) => {
 
             {usageTypes.map(usageType =>
               usage[usageType].length > 0 ? (
-                <Columns key={usageType} space={['medium', 'large']} collapse>
+                <Columns
+                  key={usageType}
+                  space={['medium', 'large']}
+                  collapseBelow="tablet"
+                >
                   <Column width="1/5">
                     <Text tone="secondary">{usageType}</Text>
                   </Column>
@@ -169,45 +171,40 @@ const ToneDefinition = ({ tone }: { tone: Tone }) => {
     </Stack>
   );
 };
-export const Tones = () => {
-  const styles = useStyles(styleRefs);
+export const Tones = () => (
+  <TextStack>
+    <Heading level="2">Tones</Heading>
 
-  return (
-    <TextStack>
-      <Heading level="2">Tones</Heading>
+    <Text>
+      The usage of colour in the system is designed to have a strong correlation
+      with the tone of voice being used. The system makes available a spectrum
+      of tones which are leveraged across the entire component suite.
+    </Text>
 
-      <Text>
-        The usage of colour in the system is designed to have a strong
-        correlation with the tone of voice being used. The system makes
-        available a spectrum of tones which are leveraged across the entire
-        component suite.
-      </Text>
-
-      <Columns space={['small', 'gutter']}>
-        {tones.map(tone => (
-          <Column key={tone}>
-            <Stack space={['none', 'xsmall']}>
-              <Box
-                background={toneDocs[tone].swatch}
-                borderRadius="standard"
-                width="full"
-                height="touchable"
-              />
-              <Hidden mobile>
-                <Box className={styles.swatchLabel}>
-                  <Text tone="secondary">{tone}</Text>
-                </Box>
-              </Hidden>
-            </Stack>
-          </Column>
-        ))}
-      </Columns>
-
-      <Divider />
-
+    <Columns space={['small', 'gutter']}>
       {tones.map(tone => (
-        <ToneDefinition key={tone} tone={tone} />
+        <Column key={tone}>
+          <Stack space={['none', 'xsmall']}>
+            <Box
+              background={toneDocs[tone].swatch}
+              borderRadius="standard"
+              width="full"
+              height="touchable"
+            />
+            <Hidden below="tablet">
+              <Box textAlign="center">
+                <Text tone="secondary">{tone}</Text>
+              </Box>
+            </Hidden>
+          </Stack>
+        </Column>
       ))}
-    </TextStack>
-  );
-};
+    </Columns>
+
+    <Divider />
+
+    {tones.map(tone => (
+      <ToneDefinition key={tone} tone={tone} />
+    ))}
+  </TextStack>
+);

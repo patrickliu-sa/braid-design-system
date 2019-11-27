@@ -4,7 +4,10 @@ import { ComponentDocs } from '../../../site/src/types';
 import { Text } from './Text';
 import { Box } from '../Box/Box';
 import { Stack } from '../Stack/Stack';
-import { background as boxBackgrounds } from '../Box/useBoxStyles.treat';
+import {
+  background as boxBackgrounds,
+  textAlign,
+} from '../Box/useBoxStyles.treat';
 import { text as textSizes } from '../../hooks/typography/typography.treat';
 
 const Container = ({ children }: { children: ReactNode }) => (
@@ -12,6 +15,7 @@ const Container = ({ children }: { children: ReactNode }) => (
 );
 
 const docs: ComponentDocs = {
+  category: 'Content',
   migrationGuide: true,
   examples: [
     { label: 'Standard Text', Example: () => <Text>Standard text.</Text> },
@@ -30,6 +34,36 @@ const docs: ComponentDocs = {
         <Box background="brand" padding="xsmall">
           <Text>Brand background.</Text>
         </Box>
+      ),
+    },
+    {
+      label: 'Text Alignment',
+      docsSite: false,
+      Container,
+      Example: () => {
+        const alignments = Object.keys(textAlign) as Array<
+          keyof typeof textAlign
+        >;
+
+        return (
+          <Stack space="medium">
+            {alignments.map(alignment => (
+              <Text align={alignment} key={alignment}>
+                {titleCase(alignment)}
+              </Text>
+            ))}
+          </Stack>
+        );
+      },
+    },
+    {
+      label: 'Text Alignment (responsive)',
+      docsSite: false,
+      Container,
+      Example: () => (
+        <Text align={['right', 'center', 'left']}>
+          Right aligned mobile, center on tablet, left on desktop
+        </Text>
       ),
     },
     {
