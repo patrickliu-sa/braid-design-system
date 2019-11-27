@@ -4,7 +4,7 @@ import { Theme } from '../theme';
 const theme: Theme = {
   ...runtimeTokens,
   name: 'jobsDbDarkMode',
-  background: '#121212',
+  background: '#1a1a1a',
   treatTheme,
 };
 
