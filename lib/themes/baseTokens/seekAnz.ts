@@ -27,6 +27,7 @@ export const makeTokens = ({
   const black = '#1c1c1c';
   const link = '#2765cf';
   const secondary = '#1c1c1ca1';
+  const defaultBackground = '#eee';
 
   const tokens: TreatTokens = {
     name,
@@ -212,6 +213,7 @@ export const makeTokens = ({
         promote,
         positive,
         neutral,
+        defaultBackground,
       },
     },
   };

@@ -36,6 +36,7 @@ export const makeTokens = ({
   const selection = blue5;
   const secondary = grey2;
   const neutral = grey2;
+  const defaultBackground = grey5;
 
   const tokens: TreatTokens = {
     name,
@@ -221,6 +222,7 @@ export const makeTokens = ({
         promote,
         positive,
         neutral,
+        defaultBackground,
       },
     },
   };

@@ -62,6 +62,7 @@ export const makeTokens = ({
   const focus = lighten(0.3, palette.saBlueLight);
   const selection = lighten(0.4, palette.saBlueLight);
   const formHover = lighten(0.15, palette.saBlueLight);
+  const defaultBackground = '#eee';
 
   const tokens: TreatTokens = {
     name,
@@ -247,6 +248,7 @@ export const makeTokens = ({
         promote,
         positive,
         neutral,
+        defaultBackground,
       },
     },
   };
