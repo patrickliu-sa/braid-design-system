@@ -24,6 +24,7 @@ export default makeTokens({
         inputDisabled: '#444',
         card: '#333',
         formAccent: '#396AA2',
+        neutral: '#1a1a1a',
       },
     },
   },
