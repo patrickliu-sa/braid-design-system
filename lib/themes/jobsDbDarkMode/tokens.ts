@@ -10,13 +10,15 @@ export default makeTokens({
   tokenOverrides: {
     color: {
       foreground: {
-        neutral: '#bbb',
-        neutralInverted: '#666',
+        link: '#71bee0',
+        linkHover: '#71bee0',
+        neutral: '#ccc',
+        neutralInverted: '#333',
         formAccent: '#396AA2',
-        info: '#5481a9',
-        critical: '#f14c4c',
-        positive: '#7fa851',
-        promote: '#b278b2',
+        info: '#062541',
+        critical: '#750000',
+        positive: '#233f03',
+        promote: '#471f47',
         secondary: '#ddd',
       },
       background: {
@@ -24,7 +26,8 @@ export default makeTokens({
         inputDisabled: '#444',
         card: '#333',
         formAccent: '#396AA2',
-        neutral: '#1a1a1a',
+        defaultBackground: '#1a1a1a',
+        selection: '#25a0d0',
       },
     },
   },

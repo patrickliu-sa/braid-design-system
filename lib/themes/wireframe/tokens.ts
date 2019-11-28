@@ -12,6 +12,7 @@ const white = '#fff';
 const link = '#4c77bb';
 const secondary = '#777';
 const neutral = '#d0d9e6';
+const defaultBackground = '#eee';
 
 const tokens: TreatTokens = {
   name: 'wireframe',
@@ -196,6 +197,7 @@ const tokens: TreatTokens = {
       promote,
       positive,
       neutral,
+      defaultBackground,
     },
   },
 };

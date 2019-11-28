@@ -116,6 +116,7 @@ export interface TreatTokens {
       critical: string;
       positive: string;
       neutral: string;
+      defaultBackground: string;
     };
   };
 }
