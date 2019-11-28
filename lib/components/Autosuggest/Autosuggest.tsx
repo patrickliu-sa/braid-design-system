@@ -553,7 +553,7 @@ export function Autosuggest<Value>({
             ) => (
               <Box {...a11y.rootProps}>
                 <Box
-                  background="card"
+                  background="input"
                   component="input"
                   borderRadius={borderRadius}
                   paddingX={paddingX}
